@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,18 +57,21 @@ Route::get('/request-test', function () {
   ]);
 });
 
-Route::get('/posts/{post}', function ($post) {
-  //return $post;
-  $posts = [
-    'first-post' => 'Hello, this is my first blog post!',
-    'second-post' => 'Now I am getting the hang of this blogging thing'
-  ];
+// Route::get('/posts/{post}', function ($post) {
+//   //return $post;
+//   $posts = [
+//     'first-post' => 'Hello, this is my first blog post!',
+//     'second-post' => 'Now I am getting the hang of this blogging thing'
+//   ];
 
-  if ( ! array_key_exists($post, $posts)) {
-    abort(404);
-  }
+//   if ( ! array_key_exists($post, $posts)) {
+//     abort(404);
+//   }
 
-  return view('post', [
-    'post' => $posts[$post] ?? 'Nothing here yet.'
-  ]);
-});
+//   return view('post', [
+//     'post' => $posts[$post] ?? 'Nothing here yet.'
+//   ]);
+// });
+// Route::get('/posts/{post}', ['App\Http\Controllers\PostsController', 'show']);
+// a web.php fájl többi része
+Route::get('/posts/{post}', [PostsController::class, 'show']);
