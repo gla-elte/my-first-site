@@ -56,3 +56,19 @@ Route::get('/request-test', function () {
     'title' => request('title'), // példa: http://127.0.0.1:8000/request-test?title=MyFirstTitle
   ]);
 });
+
+Route::get('/posts/{post}', function ($post) {
+  //return $post;
+  $posts = [
+    'first-post' => 'Hello, this is my first blog post!',
+    'second-post' => 'Now I am getting the hang of this blogging thing'
+  ];
+
+  if ( ! array_key_exists($post, $posts)) {
+    abort(404);
+  }
+
+  return view('post', [
+    'post' => $posts[$post] ?? 'Nothing here yet.'
+  ]);
+});
