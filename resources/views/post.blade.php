@@ -1,2 +1,10 @@
-<p>{{ $post }}</p>
-<p>length: {{ $length }} character(s)</p>
+@extends('layout')
+
+@section('content')
+  <p>{{ $post }}</p>
+  <p>length: {{ $length }} character(s)</p>
+@endsection
+
+@section('title')
+Első blogbejegyzés
+@endsection
