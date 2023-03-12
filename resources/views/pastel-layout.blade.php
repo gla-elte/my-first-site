@@ -15,7 +15,8 @@
         content="mlp design">
     <meta name="robots"
         content="index, follow">
-    <link rel="stylesheet" href="/css/pastel.css">
+    {{-- <link rel="stylesheet" href="/css/pastel.css"> --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
