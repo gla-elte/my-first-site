@@ -30,7 +30,7 @@
         <label for="show-menu"
             class="close"><span class="fa fa-times"></label>
         <ul id="menu">
-          <li><a href="/" class="{{ Request::path() === '/' ? 'active' : '' }}">Kezdőoldal</a></li>
+          <li><a href="/" class="{{ Request::path() === '/' ? 'active' : '' }}">{{ __('example.home') }}</a></li>
           <li><a href="/contact" class="{{ Request::path() === 'contact' ? 'active' : '' }}">Kapcsolat</a></li>
           <li><a href="/pass-array" class="{{ Request::path() === 'pass-array' ? 'active' : '' }}">Tömb adatainak küldése</a></li>
           <li><a href="/request-test?title=MyFirstTitle" class="{{ Request::path() === 'request-test' ? 'active' : '' }}">Adatküldés URL segítségével</a></li>

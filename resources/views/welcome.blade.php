@@ -1,7 +1,7 @@
 @extends('pastel-layout')
 
 @section('content')
-  Hi, {{ $name }}
+  {{ __('example.greeting', ['name' => $name])  }}
 @endsection
 
 @section('title')
